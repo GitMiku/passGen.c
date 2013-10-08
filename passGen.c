@@ -28,6 +28,7 @@ main(int argc, char **argv)
 	
 return 0;
 }
+
 passgen(int passwordLength)
 {
  srand(time(NULL));
