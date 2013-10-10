@@ -13,13 +13,17 @@
 #include <time.h>
 #include <string.h>
 
-main(int argc, char **argv)
-{
+void usage(char *program_name) {
+printf("Usage: %s [number of desired characters in your password \n", program_name);
+printf("Example: %s 5 would print a password of 5 characters.\n", program_name);
+exit(1);
+
+} 
+
+int main(int argc, char **argv) {
 	int passwordLength;
 	if (argc == 1) {
-		
-		passwordLength = 20;
-		passgen(passwordLength);
+		usage(argv[0]);
 
 	} else {
 		sscanf(argv[1], "%d", &passwordLength);
@@ -29,7 +33,7 @@ main(int argc, char **argv)
 return 0;
 }
 
-passgen(int passwordLength)
+int passgen(int passwordLength)
 {
  srand(time(NULL));
  char password[255];
